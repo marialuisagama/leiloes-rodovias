@@ -28,7 +28,7 @@ Montei uma base com **22 leilões federais** de rodovias (18 realizados entre 20
 
 **Consequência para o modelo:** se o desconto não é previsível pelos fundamentos, não faz sentido tratá-lo como premissa. O modelo calcula o **desconto máximo** que um investidor pode oferecer e compara com as faixas históricas: ~0% sem disputa, ~15% com disputa moderada e ~25% com disputa forte.
 
-**Por que a Rota 2 de Julho:** é o único finalista ainda não leiloado, o que permite uma previsão "ao vivo". É também o maior lote em capex (R$ 14,8 bi) e o de maior tráfego.
+**Por que a Rota 2 de Julho:** é o único finalista ainda não leiloado, o que permite uma previsão "ao vivo". É também o maior lote em capex (R$ 14,3 bi na série anual do modelo do governo) e o de maior tráfego.
 
 ## 2. Modelo de project finance (Excel)
 
@@ -37,10 +37,10 @@ Montei uma base com **22 leilões federais** de rodovias (18 realizados entre 20
 **Calibração:** com desconto zero, a TIR do projeto do meu modelo dá **12,45%**, contra os **12,49%** do governo. Os 0,04 p.p. de diferença vêm de uma simplificação no cálculo do IR. A TIR de referência do governo é a TLP (7,55%) somada a um spread de risco de 4,94%, que sai de uma matriz de notas da ANTT.
 
 **O que acrescentei: a estrutura de financiamento**
-- **Dívida dimensionada pelo caixa:** o serviço da dívida em cada ano é o caixa disponível (CFADS) dividido pelo **ICSD mínimo de 1,30x**. A dívida é o valor presente dessas parcelas.
+- **Dívida dimensionada pelo caixa:** o serviço da dívida em cada ano é o caixa disponível (CFADS) dividido pelo **ICSD mínimo de 1,30x**, em linha com o mercado de rodovias (a Moody's Local, por exemplo, usa 1,35x como gatilho de rebaixamento da Rota das Bandeiras). A dívida é o valor presente dessas parcelas.
 - **Amortização esculpida:** a parcela acompanha o caixa, então o ICSD fica em 1,30x em todos os anos de amortização (9 a 24).
 - **Carência durante a obra** (anos 1 a 8, quando o capex chega a R$ 2,4 bi por ano) e **alavancagem máxima de 70%** do capex da obra.
-- **Custo real da dívida de IPCA + 7,8%**, calibrado com debêntures incentivadas recentes de rodovias.
+- **Custo real da dívida de IPCA + 7,8%**, calibrado com debêntures incentivadas da EcoRodovias emitidas entre IPCA + 7,74% e IPCA + 7,95%.
 - **Lock-up:** durante a obra, nenhum dividendo é distribuído; o caixa excedente fica retido e é liberado quando começa a amortização.
 - **Desconto máximo** encontrado com o Atingir Meta: o desconto que faz a TIR do acionista igualar o hurdle de 12% real.
 
@@ -79,6 +79,8 @@ O resultado também depende do retorno exigido: com hurdle de 10%, o desconto m�
 
 ## 5. Limitações
 
+- **CFADS sem capex de manutenção (a mais importante):** o caixa disponível para a dívida não desconta o capex que ainda ocorre depois da obra (~R$ 2,7 bi entre os anos 9 e 24), como restaurações de pavimento. Medido corretamente, o ICSD fica entre 1,06x e 1,43x, e não em 1,30x. Redimensionando a dívida com esse capex (e incluindo o benefício fiscal dos juros, que o caixa atual também ignora), a dívida cai de R$ 6,6 bi para ~R$ 6,4 bi e o deságio máximo, de ~25% para **~24%**. A conclusão se mantém.
+
 - **Termos reais:** o modelo não projeta inflação, como o MEF; a dívida entra como IPCA + spread.
 - **Séries herdadas:** receita, opex e capex vêm do modelo do governo, sem revisão independente de engenharia ou tráfego.
 - **Tráfego não reage à tarifa:** com desconto, o tráfego seria um pouco maior, então a premissa é conservadora.
@@ -105,6 +107,9 @@ O resultado também depende do retorno exigido: com hurdle de 10%, o desconto m�
 - Estudos de demanda da Rota das Gerais, do Paraná Lote 3 e da Rota Agro Norte (CN5), data rooms da ANTT e do BNDES
 - IBGE, PIB dos Municípios (base 2010-2023)
 - Imprensa especializada (Agência iNFRA, Poder360, NeoFeed e outras) para vencedores, descontos e número de propostas; a fonte de cada leilão está na planilha
+- Custo da dívida: debêntures incentivadas da EcoRodovias, [IPCA + 7,74%](https://www.meelion.com/renda-fixa/investimento/debenture-ecorodovias-ipca-mais774-2039-06-16/) e [IPCA + 7,95%](https://www.meelion.com/renda-fixa/investimento/debenture-ecorodovias-ipca-mais795-2031-06-18/)
+- ICSD de referência: [Moody's Local, relatório de crédito da Rodovias do Brasil (abr/2026)](https://moodyslocal.com.br/wp-content/uploads/2026/04/1.2.1_MLBR_RelatoriodeCredito-PUBLICO_Rodovias-do-Brasil_04.2026.pdf)
+- Alavancagem de 70%: [Exame, BNDES, BB e Caixa financiarão até 70% de projetos de rodovias (2014)](https://exame.com/economia/bndes-bb-caixa-financiarao-ate-70-de-projetos-de-rodovias/)
 
 ---
 
